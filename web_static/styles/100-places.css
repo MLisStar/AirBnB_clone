@@ -64,16 +64,16 @@ div.number_rooms p,
 div.number_bathrooms p {
 	padding-top: 35px;
 }
-div.amenities,
+div.hm-amenities,
 div.reviews{
 	margin-top:40px;
 	padding-left:0;
 }
-div.amenities h2{
+div.hm-amenities h2{
 	font-size:16px;
 	border-bottom:1px solid #DDDDDD;
 }
-div.amenities ul{
+div.hm-amenities ul{
 	padding-left:0;
 }
 .fa-tv{
