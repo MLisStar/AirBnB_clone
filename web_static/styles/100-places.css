@@ -26,7 +26,7 @@ div.price_by_night {
 }
 
 div.information {
-	display: flex;
+	display:flex;
 	border-top: 1px solid #DDDDDD;
 	border-bottom: 1px solid #DDDDDD;
 	height: 80px;
@@ -64,10 +64,11 @@ div.number_rooms p,
 div.number_bathrooms p {
 	padding-top: 35px;
 }
-div.hm-amenities,
-div.reviews{
+div.hm-amenities{
 	margin-top:40px;
 	padding-left:0;
+	width:100%;
+	justify-content:left;
 }
 div.hm-amenities h2{
 	font-size:16px;
@@ -76,8 +77,9 @@ div.hm-amenities h2{
 div.hm-amenities ul{
 	padding-left:0;
 }
+div.hm-amenities li{
+}
 .fa-tv{
-	margin: 0;
 	padding-left:20px;
 	list-style: none;
 	background-image: url('../images/icon_tv.png');
@@ -94,17 +96,44 @@ div.hm-amenities ul{
         background-position: left center;
         background-size: 20px;
 }
+.fa-pets{
+        margin: 0;
+        padding-left:20px;
+        list-style: none;
+        background-image: url('../images/icon_pets.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 20px;
+}
 .reviews{
-	padding-left:0;
+	margin-top:40px;
+	padding-left:0;	
 }
 .reviews h2{
         font-size:16px;
+	border-bottom:1px solid #DDDDDD;
+}
+.reviews ul{
+	padding-left:0;
+	list-style:none;
+}
+.reviews li{
+	text-align:left;
+	list-style:none;
+	padding:0;
+	margin:0;
+	top:0;
 }
 .reviews h3{
 	font-size:14px;
+	padding-bottom:0;
+	margin-bottom:0;
 }
 .reviews p{
 	font-size:12px;
+	margin-top:0;
+	padding:0;
+	line-height:100%;
 }
 article {
 	display: flex;
