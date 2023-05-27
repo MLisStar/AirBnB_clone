@@ -1,18 +1,17 @@
 section.filters{
-	align-items: center;
 	display: flex;
 	background-color: white;
-	border: 1px solid #DDDDDD;
+	align-items:center;
 	border-radius: 4px;
 	height: 70px;
 	width: 100%;
-	position: relative;
+	border:1px solid #DDDDDD;
+	position:relative;
 }
 div.locations,div.amenities{
 	padding:0 30px;
 	height:100%;
-	width:25%;
-	z-index:0;
+	width:100%;
 }
 div.locations{
 	border-right:1px solid #DDDDDD;
@@ -52,6 +51,7 @@ ul{
 }
 li{
 	line-height:25px;
+	text-align:left;
 }
 li.pop-Item{
 	margin-bottom:20px;
@@ -67,7 +67,7 @@ ul.popover{
 ul.pop-amenities{
 	padding-left:50px;
 }
-ul.pop-items{
+ul.pop-tems{
 	padding-left:15px;
 }
 h2.pop-state{
@@ -80,75 +80,60 @@ h2.pop-state{
     margin: 0 auto;
   }
 }*/
-/* Swap to vertical layout for small screens 
-@media screen and (max-width: 2500px) {
-  .filters {
+/* Swap to vertical layout for small screens */
+@media screen and (max-width: 800px) {
+	div.container{
+		max-width:100%;
+		margin-left:0;
+	}
+section.filters {
+    border:none;
     display: flex;
     flex-direction:column;
-    align-content:space-around;
-    height: 210px;
-  }
+    align-content:space-between;
+    height:auto;
+    padding-left:0;
+    text-align:center;
+    padding-right:0;
+    width:100%;
+    }
 
-  .filters .locations,
-  .filters .amenities {
+div.locations,
+div.amenities {
     height: 70px;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    border-bottom:1px solid #DDDDDD;
+  }
+  div.locations{
+        border-right:none;
+}
+
+div.amenities{
+	  
   }
 
-  .filters .locations:hover .popover,
-  .filters .amenities:hover .popover {
-    position: relative;
-    width: 100%;
+div.locations:hover .popover,
+div.amenities:hover .popover {
+    position:relative;
+    width:100%;
+    margin-top:15;
     z-index: 1;
   }
-.filters.locations:hover .amenities{
+div.locations:hover .amenities{
+	padding-top:auto;
+	position:relative;
 	z-index:0;
 }
-  .filters .amenities:hover {
-    border-top: 1px solid #ddd;
-  }
-}*/
-@media screen and (max-width: 2500px) {
-  .filters {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    height: 210px;
-    position: relative;
-  }
+div.amenities:hover,
+div.locations:hover{
 
-  .filters .locations,
-  .filters .amenities {
-    height: 70px;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-    z-index: 1; /* Set a lower z-index for .locations and .amenities */
-  }
-
-  .popover {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 2;
-    display: none;
-    background-color: white;
-    padding: 10px;
-  }
-
-  .pop-Item:hover .popover {
-    display: block;
-    z-index: 3; /* Set a higher z-index for the .popover within .pop-Item */
-  }
-
-  .pop-Item .popover {
-    position: absolute;
-    top: 0;
-    left: 100%;
-  }
-
-  .locations:hover .amenities .popover {
-    z-index: 2; /* Set a higher z-index for .amenities .popover */
-  }
+    }
+li.pop-Item{
+	padding:0;
+	margin:0;
+}
+.btn{
+	width:100%;
+	margin:0;
+}
 }
