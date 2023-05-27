@@ -2,6 +2,7 @@ section.places {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	text-align:center;
 }
 
 section.places h1 {
