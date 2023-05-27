@@ -12,6 +12,7 @@ div.locations,div.amenities{
 	padding:0 30px;
 	height:100%;
 	width:25%;
+	z-index:0;
 }
 div.locations{
 	border-right:1px solid #DDDDDD;
@@ -72,34 +73,82 @@ ul.pop-items{
 h2.pop-state{
 	margin:0px;
 }
-/* Maintain shape of search bar as screen gets smaller*/ 
-@media screen and (max-width: 1000px) {
+/* Maintain shape of search bar as screen gets smaller
+@media screen and (max-width: 1200px) {
   .filters {
     width: 95%;
     margin: 0 auto;
   }
-}
-/* Swap to vertical layout for small screens */
-@media screen and (max-width: 800px) {
+}*/
+/* Swap to vertical layout for small screens 
+@media screen and (max-width: 2500px) {
   .filters {
-    display: grid;
+    display: flex;
+    flex-direction:column;
+    align-content:space-around;
     height: 210px;
-    width:100%;
+  }
 
+  .filters .locations,
+  .filters .amenities {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
   }
-  div.locations,div.amenities
-  {
-	  width:100%;
+
+  .filters .locations:hover .popover,
+  .filters .amenities:hover .popover {
+    position: relative;
+    width: 100%;
+    z-index: 1;
   }
-  .btn{
-        color:black;
-        font-size:18px;
-        background-color:blue;
-        height:48px;
-        width:100%;
-        border:0;
-        border-radius:4px;
-        margin-left:auto;
-        margin-right:30px;
+.filters.locations:hover .amenities{
+	z-index:0;
 }
+  .filters .amenities:hover {
+    border-top: 1px solid #ddd;
+  }
+}*/
+@media screen and (max-width: 2500px) {
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    height: 210px;
+    position: relative;
+  }
+
+  .filters .locations,
+  .filters .amenities {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 1; /* Set a lower z-index for .locations and .amenities */
+  }
+
+  .popover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    display: none;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .pop-Item:hover .popover {
+    display: block;
+    z-index: 3; /* Set a higher z-index for the .popover within .pop-Item */
+  }
+
+  .pop-Item .popover {
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+
+  .locations:hover .amenities .popover {
+    z-index: 2; /* Set a higher z-index for .amenities .popover */
+  }
 }
